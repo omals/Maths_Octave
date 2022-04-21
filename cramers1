@@ -1,0 +1,11 @@
+A=[3 2 -1;2 -2 4;-1 0.5 -1];
+b=[1 -2 0]';
+
+[N,M]=size(A);
+deA=det(A);
+for i=1:N
+    AT=A;
+    AT(:,i)=b;
+    x(i)=det(AT)/detA;
+end
+disp(x)

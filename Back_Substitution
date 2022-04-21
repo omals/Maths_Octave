@@ -1,0 +1,13 @@
+function x=BS(U1)
+[N,M]=size(U1);
+b=U1(:,M);
+%disp(b);
+x=zeros(N,1);
+for i=N:-1:1
+    T=0;
+    for j=N:-1:i+1
+        T=T+x(j)*U1(i,j);
+    end
+    x(i)=(b(i)-T)/U1(i,i);
+end
+endfunction

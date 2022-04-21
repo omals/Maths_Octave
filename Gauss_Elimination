@@ -1,0 +1,49 @@
+%A=[1 2 3;4 5 6;7 5 6];
+A=[1 2 -1;2 -3 1;5 -1 -2];
+TA=A;
+b=[2 -1 -3]';
+A=[A b];
+%A=[A eye(3)];
+%disp(A);
+U=A;
+
+L=eye(3);
+M=eye(3);
+[N,m]=size(A);
+for i=1:N-1
+    for j=i+1:N
+        k=U(j,i)/U(i,i);
+        M(j,i)=-k;
+        U(j,:)=U(j,:)-k*U(i,:);
+    end
+    %disp(M)
+    L=M*L;
+    M=eye(3);
+end
+%x=BS(U);
+%disp(TA*x)
+%disp(U(1:3,1:3));
+U3=U;
+x=BS(U);
+disp(x);
+U2=UT=eye(3);
+for i=1:N-1
+    for j=i+1:N
+        k=U(i,j)/U(j,j);
+       % disp(U)
+        U2(i,j)=-k;
+        U(i,:)=U(i,:)-k*U(j,:);
+    end
+    U(i,:)=U(i,:)/U(i,i);
+    UT=U2*UT;
+    %disp(U2);
+    U2=eye(3);
+end
+U(N,:)=U(N,:)/U(N,N);
+
+%disp(UT*U3(1:3,1:3));
+
+
+
+    
+

@@ -1,0 +1,44 @@
+close all; clear all;
+x1=1;x2=2;x3=3;y1=3;y2=2;y3=4;
+X=[x1 x2]';Y=[y1 y2]';
+scatter(X,Y);
+A=[x1 1;x2 1];
+b=[y1 y2]';
+%A=[A b];
+%disp(A);
+%U=A;
+
+%L=eye(3);
+%M=eye(3);
+%[N,m]=size(A);
+%for i=1:N-1
+ %   for j=i+1:N
+  %      k=U(j,i)/U(i,i);
+  %      M(j,i)=-k;
+  %      U(j,:)=U(j,:)-k*U(i,:);
+   % end
+    %disp(M)
+    %L=M*L;
+    %M=eye(3);
+%end
+%x=BS(U);
+%disp(TA*x)
+%disp(U(1:3,1:3));
+%U3=U;
+%x=BS(U);
+x=pinv(A)*b;
+a1=x(1);
+a2=x(2);
+%a3=x(3);
+%disp(x);
+X1=0:0.1:5;
+Y1=a1*X1+a2;
+hold on;
+plot(X1,Y1);
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+A=[3 2 -1;2 -2 4;-1 0.5 -1];
+b=[1 -2 0]';
+A1=[b A(:,2:3)];
+A2=[A(:,1) b A(:,3)];
+A3=[A(:,1:2) b];
+%disp(A3);
+%disp(A1);
+detA=det(A);
+x=det(A1)/detA;
+y=det(A2)/detA;
+z=det(A3)/detA;
+disp([x y z]');
