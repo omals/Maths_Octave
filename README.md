@@ -1,2 +1,6 @@
 # Maths_Octave
-Maths Octave works
+
+Matrix Operations:
+ - Back Propagation
+ - Gauss Seidel Method
+ - Gauss Elimination
