@@ -4,3 +4,4 @@ Matrix Operations:
  - Back Propagation
  - Gauss Seidel Method
  - Gauss Elimination
+ - Cramer's Rule
